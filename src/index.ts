@@ -1,18 +1,13 @@
-import express, { Request, Response } from 'express';
+import { createApp } from './app';
 
-const app = express();
+const app = createApp();
 const PORT = process.env.PORT || 3001;
 
-app.use(express.json());
+/* istanbul ignore next -- runtime bootstrap is exercised in process-level smoke tests */
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`TalentTrust API listening on http://localhost:${PORT}`);
+  });
+}
 
-app.get('/health', (_req: Request, res: Response) => {
-  res.json({ status: 'ok', service: 'talenttrust-backend' });
-});
-
-app.get('/api/v1/contracts', (_req: Request, res: Response) => {
-  res.json({ contracts: [] });
-});
-
-app.listen(PORT, () => {
-  console.log(`TalentTrust API listening on http://localhost:${PORT}`);
-});
+export default app;
