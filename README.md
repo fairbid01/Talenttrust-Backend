@@ -40,6 +40,15 @@ npm start
 | `npm test`      | Run Jest tests                 |
 | `npm run lint`  | Run ESLint                     |
 
+## Security
+
+The TalentTrust Backend implements hardened HTTP response policies and origin controls.
+
+- **Security Headers**: Managed via [Helmet](https://helmetjs.github.io/) (CSP, HSTS, etc.).
+- **CORS Policy**: Configurable origin controls.
+
+For detailed information, see [Security Documentation](docs/backend/security.md).
+
 ## Contributing
 
 1. Fork the repo and create a branch from `main`.

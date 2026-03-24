@@ -1,8 +1,10 @@
 import express, { Request, Response } from 'express';
+import { applySecurityMiddleware } from './middleware/security';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+applySecurityMiddleware(app);
 app.use(express.json());
 
 app.get('/health', (_req: Request, res: Response) => {
