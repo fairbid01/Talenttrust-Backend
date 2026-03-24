@@ -40,6 +40,19 @@ npm start
 | `npm test`      | Run Jest tests                 |
 | `npm run lint`  | Run ESLint                     |
 
+## Environment Variables
+
+All configuration is managed through `src/config/` and validated at startup. Copy `.env.example` to `.env` to get started. See [docs/backend/config.md](docs/backend/config.md) for full details.
+
+| Variable | Default | Description |
+|---|---|---|
+| `PORT` | `3001` | HTTP port for the Express server |
+| `NODE_ENV` | `development` | Runtime environment |
+| `STELLAR_HORIZON_URL` | `https://horizon-testnet.stellar.org` | Stellar Horizon API endpoint |
+| `STELLAR_NETWORK_PASSPHRASE` | `Test SDF Network ; September 2015` | Network passphrase for signing |
+| `SOROBAN_RPC_URL` | `https://soroban-testnet.stellar.org` | Soroban JSON-RPC endpoint |
+| `SOROBAN_CONTRACT_ID` | *(empty)* | Deployed escrow contract ID |
+
 ## Contributing
 
 1. Fork the repo and create a branch from `main`.

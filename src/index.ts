@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
+import { config } from './config';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 
@@ -13,6 +13,8 @@ app.get('/api/v1/contracts', (_req: Request, res: Response) => {
   res.json({ contracts: [] });
 });
 
-app.listen(PORT, () => {
-  console.log(`TalentTrust API listening on http://localhost:${PORT}`);
+app.listen(config.server.port, () => {
+  console.log(
+    `TalentTrust API listening on http://localhost:${config.server.port}`,
+  );
 });
