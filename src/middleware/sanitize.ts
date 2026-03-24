@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import xss from 'xss';
+import { FilterXSS } from 'xss';
 
 /**
  * Custom xss options to enforce strict sanitization
@@ -11,7 +11,7 @@ const xssOptions = {
   stripIgnoreTagBody: ['script', 'style'], // Remove the tag AND its body
 };
 
-const customXss = new xss.FilterXSS(xssOptions);
+const customXss = new FilterXSS(xssOptions);
 
 /**
  * Recursively sanitize an object or string using xss filtering.
