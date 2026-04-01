@@ -122,6 +122,15 @@ src/
 See [docs/backend/architecture.md](docs/backend/architecture.md) for design
 decisions and planned integrations.
 
+## Security
+
+The TalentTrust Backend implements hardened HTTP response policies and origin controls.
+
+- **Security Headers**: Managed via [Helmet](https://helmetjs.github.io/) (CSP, HSTS, etc.).
+- **CORS Policy**: Configurable origin controls.
+
+For detailed information, see [Security Documentation](docs/backend/security.md).
+
 ## Contributing
 
 1. Fork the repo and create a branch: `git checkout -b feature/<ticket>-description`
